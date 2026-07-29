@@ -32,15 +32,16 @@ This tool maps every dependency first, so you decide with the full picture.
 
 - Power BI Desktop
 - [DAX Studio](https://daxstudio.org/) — to get the local server, port and database GUID
-- Report Analyzer — to export the metadata of the connected reports
-- Access to the semantic model: a local Power BI file, or the XMLA endpoint of a Power BI
-  Premium / Fabric workspace
+- [Report Analyzer](https://github.com/m-kovalsky/ReportAnalyzer) — to export the metadata of
+  the connected reports
+- Access to the semantic model: a local Power BI file, or the XMLA endpoint of a workspace on a
+  Fabric capacity (F SKU), Premium Per User, or Power BI Premium
 
 ## Quick start
 
 1. **Connect to the model.** Local: open the file, connect DAX Studio (*PBI / SSDT Model*) and
    copy the `localhost:port` plus the database GUID from
-   `SELECT * FROM $SYSTEM.DBSCHEMA_CATALOGS`. Premium/Fabric: copy the workspace connection
+   `SELECT * FROM $SYSTEM.DBSCHEMA_CATALOGS`. Fabric/Premium: copy the workspace connection
    string from the workspace settings and use the semantic model name as the database.
 2. **Export report metadata.** Put every report connected to the model in one folder and run
    Report Analyzer → *Export Report Metadata*.
@@ -54,6 +55,10 @@ Full walkthrough with screenshots in the [blog post](https://nudatabi.com/blog/t
 - Back up the model first.
 - Include **every** report connected to it — a missing report means missing dependencies.
 - When in doubt, hide before deleting.
+
+## License
+
+MIT — free to use, modify and distribute.
 
 ---
 
